@@ -1,0 +1,206 @@
+<!doctype html>
+
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+<head>
+  <!-- Design by foolishdeveloper.com -->
+    <title>BLACKBOX</title>
+ 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <!--Stylesheet-->
+    <style media="screen">
+      *,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+ 
+    background: url("../assets/reg/images/stulogin1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;  
+   
+     }
+
+.background{
+    width:600px;
+    height: 10px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 400%;
+    
+    top: 100%;
+}
+.background .shape{
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    border-radius: 50%;
+}
+.shape:first-child{
+    background: linear-gradient(
+        #1845ad,
+        #23a2f6
+    );
+    left: -80px;
+    top: -80px;
+}
+.shape:last-child{
+    background: linear-gradient(
+        to right,
+        #ff512f,
+        #f09819
+    );
+    right: -30px;
+    bottom: -80px;
+}
+form {
+    height: 500px;
+    width: 600px;
+    background-color: rgba(255, 255, 255, 0.13);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%; /* Adjust the top position as needed */
+    margin-top: 10px; /* Add margin to create space from the top */
+    left: 50%;
+    border-radius: 20px;
+    backdrop-filter: blur(30px);
+   border: 3px solid white;
+    box-shadow: 0 0 90px rgba(8, 7, 16, 0.6);
+}
+form *{
+    font-family: 'Poppins',sans-serif;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+form h3{
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+    
+    background: -webkit-linear-gradient(left,rgba(255, 255, 255, 0.13),blue, rgba(255, 255, 255, 0.13));
+   
+}
+
+label {
+    display: block;
+    margin-top: 30px;
+   /*  margin-left: -230px; */
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center; /* Center-align the label */
+}
+
+input {
+    display: block;
+    height: 50px;
+    width: 50%;
+    background-color: rgba(255, 255, 255, 0.13);
+    border-radius: 5px;
+    border: 3px solid white;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+    color: white;
+    margin-left: auto;
+    margin-right: auto; /* Center-align the input */
+    font-size: 16px; /* Change to your desired font size */
+    color: white; 
+}
+
+::placeholder{
+    color: white;
+}
+button {
+    margin-top: 50px;
+    width: 120px; /* Set the width as needed */
+    height: 50px;
+    background-color: #ffffff;
+    color: #080710;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transition: background-color 0.3s ease; /* Add a smooth transition for color change */
+}
+
+button:hover {
+    background-color: blue; /* Replace with your desired hover color, e.g., #ff0000 */
+}
+.social {
+  margin-top: 30px;
+  display: flex;
+}
+
+.social div {
+  background: red;
+  width: 150px;
+  border-radius: 3px;
+  padding: 5px 10px 10px 5px;
+  background-color: rgba(255, 255, 255, 0.27);
+  color: #eaf0fb;
+  text-align: center;
+}
+
+.social div:hover {
+  background-color: rgba(255, 255, 255, 0.47); /* Light background on hover */
+}
+
+.social .fb {
+  margin-left: auto; /* Align to the right side */
+  background-color: #3b5998; /* Facebook color */
+  color: #fff; /* White text color */
+}
+
+.social i {
+  margin-right: 4px;
+}
+
+.social .tw {
+  margin-left: auto; /* Move the Twitter icon to the right */
+  background-color: #1da1f2; /* Twitter color */
+  color: #fff; /* White text color */
+}
+.social .go {
+  margin-left: 0px; /* Align to the right side */
+  background-color: #4285f4; /* Google Red color */
+  color: #fff; /* White text color */
+   
+}
+    </style>
+</head>
+<body>
+    <div class="background">
+       
+    </div>
+    <form th:action="@{/student/login}" method="post">
+        <h3>User Login Here</h3>
+
+      
+        <label for="email">Email:</label>
+        <input type="text" placeholder="Email" name="email" id="email" required>
+        
+        <label for="password">Password:</label>
+        <input type="password" placeholder="Password" name="password" id="password" required>
+
+
+        <button>Login</button>
+        <div class="social">
+          <div class="go"><i class="fab fa-google"></i>  Google</div>
+          <div class="tw"><i class="fab fa-twitter"></i>Twitter</div>
+          <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
+        </div>
+    </form>
+</body>
+</html>

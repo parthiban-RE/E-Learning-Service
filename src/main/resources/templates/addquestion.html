@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Questions</title>
+    <style>
+        body {
+    background: url("../assets/reg/images/testquestion.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;  
+   
+     }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        select {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        button[type="submit"] {
+            background-color: #28a745;
+        }
+
+        button[type="button"] {
+            background-color: #ffc107;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        /* Separate design for exam name */
+        #examName {
+            border-color: silver;
+        }
+
+        /* Separate design for question text */
+        .question-text {
+            color: black;
+        }
+
+        /* Separate design for options */
+        .options-label {
+            color: black;
+        }
+.examName-label {
+            color: green;
+        }
+        .options-input {
+            border-color: #007bff;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+        <h2>Create Exam Question Paper</h2>
+        <form method="post" action="/staff/addquestion">
+            <div class="form-group">
+                <label for="examName">Exam Name:</label>
+                <input type="text" name="examName" id="examName" required>
+            </div>
+            <div id="questionFields" class="form-group"></div>
+            <button type="button" id="addQuestionButton">Add Question</button>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var questionFields = document.getElementById("questionFields");
+            var addQuestionButton = document.getElementById("addQuestionButton");
+            var questionIndex = 0;
+
+            addQuestionButton.addEventListener("click", function () {
+                var questionDiv = document.createElement("div");
+                questionDiv.classList.add("form-group");
+                questionDiv.innerHTML = `
+                    <label for="questionText${questionIndex}">Question Text:</label>
+                    <input type="text" name="questionText" id="questionText${questionIndex}" required>
+                    <br>
+                    <label for="answers${questionIndex}_1">Option 1:</label>
+                    <input type="text" name="answers" id="answers${questionIndex}_1" required>
+                    <br>
+                    <label for="answers${questionIndex}_2">Option 2:</label>
+                    <input type="text" name="answers" id="answers${questionIndex}_2" required>
+                    <br>
+                    <label for="answers${questionIndex}_3">Option 3:</label>
+                    <input type="text" name="answers" id="answers${questionIndex}_3" required>
+                    <br>
+                    <label for="answers${questionIndex}_4">Option 4:</label>
+                    <input type="text" name="answers" id="answers${questionIndex}_4" required>
+                    <br>
+                    <label for="correct${questionIndex}">Correct Answer:</label>
+                    <select name="correct" id="correct${questionIndex}" required>
+                        <option value="0">Option 1</option>
+                        <option value="1">Option 2</option>
+                        <option value="2">Option 3</option>
+                        <option value="3">Option 4</option>
+                    </select>
+                    <br><br>
+                `;
+                questionFields.appendChild(questionDiv);
+                questionIndex++;
+            });
+        });
+    </script>
+</body>
+</html>

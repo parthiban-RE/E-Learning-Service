@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Learning Exam</title>
+    <!-- Add your CSS styles here -->
+    <style>
+    
+    body{
+ 
+    background: url("../assets/reg/images/test.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;  
+   
+     }
+       /*  body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        } */
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: silver;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center; /* Centering the heading */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table th, table td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        p.question {
+            text-decoration: underline;
+            margin-bottom: 10px;
+        }
+
+        label.answer {
+            margin-bottom: 5px;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        button[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        td{
+         background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form th:action="@{/student/submitanswers}" method="post">
+            <h2>Test Questions</h2>
+            <table>
+                <tbody>
+                    <!-- Loop through questions -->
+                   
+                    
+                     <tr th:each="question, questionIndex : ${questions}">
+                    <td>
+                        <p><span th:text="${questionIndex.index + 1}" class="question-number"></span>. <span th:text="${question.questionText}" class="question"></span></p>
+                        <input type="hidden" name="questionIds" th:value="${question.id}" />
+                        <div th:each="answer, answerIndex : ${question.answerOptions}">
+                            <input type="checkbox" name="selectedOptions" th:value="${answerIndex.index}" th:id="'answer' + ${questionIndex.index} + 'option' + ${answerIndex.index}" />
+                            <label th:for="'answer' + ${questionIndex.index} + 'option' + ${answerIndex.index}" th:text="${answer.answerText}" class="answer"></label><br/>
+                        </div>
+                    </td>
+                </tr>
+                    <!-- End loop -->
+                </tbody>
+            </table>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

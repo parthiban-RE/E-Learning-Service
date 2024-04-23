@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+
+    <link rel="stylesheet" href="assets/css/aos.css">
+
+    <link rel="stylesheet" href="assets/css/ionicons.min.css">
+
+    <link rel="stylesheet" href="assets/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="assets/css/jquery.timepicker.css">
+
+    
+    <link rel="stylesheet" href="assets/css/flaticon.css">
+    <link rel="stylesheet" href="assets/css/icomoon.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+
+       <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="manifest" href="site.webmanifest">
+		<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+       <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+		<!-- CSS here -->
+            <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+            <link rel="stylesheet" href="../assets/css/owl.carousel.min.css">
+            <link rel="stylesheet" href="../assets/css/slicknav.css">
+            <link rel="stylesheet" href="../assets/css/flaticon.css">
+            <link rel="stylesheet" href="../assets/css/animate.min.css">
+            <link rel="stylesheet" href="../assets/css/magnific-popup.css">
+            <link rel="stylesheet" href="../assets/css/fontawesome-all.min.css">
+            <link rel="stylesheet" href="../assets/css/themify-icons.css">
+            <link rel="stylesheet" href="../assets/css/slick.css">
+            <link rel="stylesheet" href="../assets/css/nice-select.css">
+            <link rel="stylesheet" href="../assets/css/style.css">
+
+    <style>
+        body {
+              background: url("../assets/reg/images/elearntb.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            /* Add any styles for your container here */
+            /* Example: margin-top: 50px; */
+        }
+
+        .button {
+            background-color: black;
+            border: none;
+            color: white;
+            padding: 5px 5px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        table,
+        th,
+        td,
+        tr {
+            border: 6px solid;
+        }
+
+        #finalloan {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: silver; /* Set your desired background color */
+}
+
+#finalloan td,
+#finalloan th,
+tr {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#finalloan tr:nth-child(even) {
+    background-color: white;
+}
+
+#finalloan tr:hover {
+    background-color: #ddd;
+}
+
+#finalloan th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background: -webkit-linear-gradient(left,rgba(255, 255, 255, 0.13),#00A36C, rgba(255, 255, 255, 0.13));
+    color: black;
+}
+        .wrappered {
+            background: -webkit-linear-gradient(left, white, #90EE90, #90EE90);
+            margin-top: 1%;
+            padding: 1%;
+        }
+
+        h2 {
+             background: -webkit-linear-gradient(left,rgba(255, 255, 255, 0.13),#00A36C, rgba(255, 255, 255, 0.13));
+            margin-top: 0%;
+            padding: 0%;
+        }
+    </style>
+</head>
+<body>
+    
+ 
+
+ 
+<div class="container mt-5"><br><br><br>
+<h2 align="center">Course Details</h2><br>
+
+       
+  <form th:action="@{/staff/joinlist}" method="get">
+ 
+  </form>
+ 
+  <table id="finalloan" class="table table-bordered table-sm mt-2">
+  
+    <thead>
+      <tr>
+        
+        <th>ID</th>     
+        <th>COURSE</th>             
+        <th>INSTRUCTOR</th>   
+        <th>STUDENT</th>   
+        <th>STATUS</th>
+         
+         
+      </tr>
+    </thead>
+    <tbody>
+                <tr th:each="l : ${doc}" >       
+        <td th:text="${l.id}"></td>
+       
+        <td th:text="${l.coursename}"></td>    
+         <td th:text="${l.staffUsername}"></td> 
+         <td th:text="${l.studentname}"></td> 
+         <td th:text="${l.status}"></td> 
+      
+         
+         
+      </tr>
+    </tbody>
+  </table>
+</div>    
+
+ </body>   
+     
+</html>

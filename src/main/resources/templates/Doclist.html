@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>List of Courses</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+     body{
+  background: url("../assets/img/download.jpg");
+  background-size: 1370px 700px;
+  background-repeat: no-repeat;
+    margin-top: 1%;
+    padding: 1%;
+  }
+   h2{
+     background: -webkit-linear-gradient(left,rgba(255, 255, 255, 0.13),#ea0f69, rgba(255, 255, 255, 0.13));
+    margin-top: 1%;
+    padding: 1%;
+    color:white;
+    text-align:center;
+}
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            transition: box-shadow 0.3s;
+        }
+        .card:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: green;
+            margin-bottom: 5px;
+        }
+        .card-text {
+             font-size: 15px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 2px;
+        }
+        .action-button {
+            background-color:#ea0f69;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .action-button:hover {
+            background-color: 	#18ddbf;
+        }
+        
+        .card {
+    width: 300px; /* Adjust the width as needed */
+}
+
+.btn-primary {
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #007d8a; /* Change button color on hover */
+}
+
+.card-title {
+    font-size: 18px; /* Adjust title font size */
+}
+
+.card-text {
+    font-size: 16px; /* Adjust text font size */
+}
+        
+        
+    </style>
+</head>
+<body class="sub_page">
+    <div class="container mt-5">
+        <h2 align="center">Course Documents</h2><br>
+      
+        <!-- Iterate over the list of courses -->
+        <div class="row">
+            <div th:each="do : ${doc}" class="col-md-4 mb-4">
+             <div class="card my-3" style="background-color: #E0FFFF; border-radius: 15px; border: none; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); perspective: 1500px;">
+    <div class="card-body d-flex flex-column align-items-center justify-content-center" style="transform-style: preserve-3d; transition: transform 0.5s;">
+       
+        <h5 class="card-title" style="color: #00adb5;">Instructor Name:</h5>
+        <p class="card-text" th:text="${do.staff.username}" style="color: #393e46;"></p>
+        <h5 class="card-title" style="color: #00adb5;">Course Name:</h5>
+        <p class="card-text" th:text="${do.coursename}" style="color: #393e46;"></p>
+        <h5 class="card-title" style="color: #00adb5;">Document:</h5>
+        <p class="card-text" th:text="${do.fileName}" style="color: #393e46;"></p>
+        <h5 class="card-title" style="color: #00adb5;">Chapter:</h5>
+        <p class="card-text" th:text="${do.chapter}" style="color: #393e46;"></p>
+       
+       
+        <!-- Action button -->
+        <form th:action="@{/student/download}" method="post" th:object="${do}" class="mt-auto">
+            <input type="hidden" name="id" th:value="${do.id}" />
+            <button type="submit" class="action-button" name="accept" value="Accept">Download</button>
+        </form>
+        <!-- You can add more details here -->
+    </div>
+</div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+</body>
+
+</html>

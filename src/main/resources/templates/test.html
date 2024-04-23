@@ -1,0 +1,21 @@
+<!-- test.html -->
+<form th:action="@{/submit}" method="post">
+    <h2>Test Questions</h2>
+    <table>
+        <tbody>
+            <tr th:each="question, questionIndex : ${questions}">
+                <td>
+                    <p th:text="${question.questionText}"></p>
+                    <input type="hidden" name="questionIds" th:value="${question.id}"/>
+                    <div th:each="answer, answerIndex : ${question.answerOptions}">
+                        <input type="radio" th:name="'answer' + ${questionIndex.index}" 
+                               th:value="${answerIndex.index}" th:id="'answer' + ${questionIndex.index} + 'option' + ${answerIndex.index}"/>
+                        <label th:for="'answer' + ${questionIndex.index} + 'option' + ${answerIndex.index}" 
+                               th:text="${answer.answerText}"></label><br/>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button type="submit">Submit</button>
+</form>

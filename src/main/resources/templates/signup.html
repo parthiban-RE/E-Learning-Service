@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>E-Learning</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="assets/reg/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="assets/reg/css/style.css">
+    <style>
+     body {
+             background-color:black;
+             background-size: 1370px 700px;
+             background-repeat: no-repeat;
+             margin-top: 1%;
+             padding: 1%;
+  }
+  </style>
+</head>
+<body>
+
+    <div class="main">
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-img">
+                    <img src="assets/reg/images/stureg.jpg" alt="">
+                </div>
+                <div class="signup-form">
+                    <form method="POST" th:action="@{/signup}" class="register-form" id="register-form">
+                        <h2>Student Registration Form</h2>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="username">Name :</label>
+                                <input type="text" name="username" id="username" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email :</label>
+                                <input type="email" name="email" id="email" required/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password :</label>
+                            <input type="password" name="password" id="password" required/>
+                        </div>
+                        <div class="form-radio">
+                            <label for="gender" class="radio-label">Gender :</label>
+                            <div class="form-radio-item">
+                                <input type="radio" name="gender" id="male" value="male"checked>
+                                <label for="male">Male</label>
+                                <span class="check"></span>
+                            </div>
+                            <div class="form-radio-item">
+                                <input type="radio" name="gender" id="female" value="female">
+                                <label for="female">Female</label>
+                                <span class="check"></span>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="state">State :</label>
+                               <input type="text" name="state" id="state" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="city">City :</label>
+                               <input type="text" name="city" id="city" required/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactno">Contact No :</label>
+                            <input type="text" name="contactno" id="contactno">
+                        </div>
+                        <div class="form-group">
+                            <label for="age">Age :</label>
+                            <input type="text" name="age" id="age">
+                        </div>
+                        <!-- <div class="form-group">
+                            <label for="course">Course :</label>
+                            <div class="form-select">
+                                <select name="course" id="course">
+                                    <option value=""></option>
+                                    <option value="computer">Computer Operator & Pragramming Assistant</option>
+                                    <option value="desiger">Designer</option>
+                                    <option value="marketing">Marketing</option>
+                                </select>
+                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                            </div>
+                        </div> -->
+                       <!--  <div class="form-group">
+                            <label for="email">Email ID :</label>
+                            <input type="email" name="email" id="email" />
+                        </div> -->
+                        <div class="form-submit">
+                          <!--   <input type="submit" value="Reset All" class="submit" name="reset" id="reset" /> -->
+                            <input type="submit" value="Register" class="submit" name="submit" id="submit"/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="assets/reg/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/reg/js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
